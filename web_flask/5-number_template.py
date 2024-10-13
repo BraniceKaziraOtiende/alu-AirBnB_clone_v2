@@ -2,18 +2,18 @@
 """
 This is a simple Flask web application.
 
-It defines four routes:
+It defines several routes:
+It defines several routes:
 - Route for the root URL ("/") that displays "Hello HBNB!"
 - Route for "/hbnb" that displays "HBNB"
 - Route for "/c/<text>" that displays "C <text>" where <text> can be any string
 - Route for "/python/(<text>)" that displays "Python <text>"
-- Route for the "/number/<n>" URL.
-- Route for the "/number_template/<n>" URL.
+- Route for the "/number/<n>" URL that displays "<n> is a number"
+- Route for the "/number_template/<n>" URL that renders a template
 
 Requirements:
-- Your web application must be listening on 0.0.0.0, port 5000
+- The web application must listen on 0.0.0.0, port 5000
 """
-
 
 from flask import Flask, render_template
 
@@ -47,7 +47,7 @@ def python(text):
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def number(n):
-    """Route for the /number/<n> URL. """
+    """Route for the /number/<n> URL."""
     return "%d is a number" % n
 
 
@@ -59,3 +59,4 @@ def number_template(n):
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000)
+
