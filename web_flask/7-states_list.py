@@ -1,5 +1,6 @@
-
-n script that starts a Flask web application
+#!/usr/bin/python3
+"""
+    python script that starts a Flask web application
 """
 
 from models import storage
